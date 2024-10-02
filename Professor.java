@@ -1,5 +1,3 @@
-package atvd3;
-
 import java.util.ArrayList; // Importa a classe ArrayList
 
 public class Professor {

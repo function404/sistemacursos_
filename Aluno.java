@@ -1,5 +1,3 @@
-package atvd3;
-
 public class Aluno {
     // Atributos da classe Aluno
     int id;

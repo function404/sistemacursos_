@@ -1,11 +1,9 @@
-package atvd3;
-
 import java.util.ArrayList; // Importa a classe ArrayList
 
 public class Curso {
     // Atributos da classe Curso
     int id;
-    private String nome;
+    String nome;
     int cargaHoraria;
     Professor professor;
     ArrayList<Aluno> alunos = new ArrayList<>(); // Lista de alunos no curso
