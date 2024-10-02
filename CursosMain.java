@@ -1,5 +1,3 @@
-package atvd3;
-
 import java.util.ArrayList; // Importa a classe ArrayList
 import java.util.Scanner; // Importa a classe Scanner
 
