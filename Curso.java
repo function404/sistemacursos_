@@ -19,7 +19,7 @@ public class Curso {
         this.professor = professor;
 
         // Relaciona o curso ao professor
-        professor.getCursos().add(this); 
+        professor.getCursos().add(this);
     }
 
     public ArrayList<Aluno> getAlunos() {
