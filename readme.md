@@ -8,7 +8,7 @@
 
 ## ℹ️ Sobre o Projeto
 
-Atividade avaliativa feita no 2° semetre da faculdade de ADS
+- Atividade avaliativa feita no 2° semetre da faculdade de ADS
 
 ## 🛠️ Ferramentas Utilizadas
 
