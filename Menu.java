@@ -1,7 +1,7 @@
 import java.util.ArrayList; // Importa a classe ArrayList
 import java.util.Scanner; // Importa a classe Scanner
 
-public class CursosMain {  
+public class Menu {  
     public static void main(String[] args) { // Método principal
         Scanner scanner = new Scanner(System.in);
         int opt;
@@ -81,7 +81,7 @@ public class CursosMain {
 
                             // Busca o professor pelo ID
                             for (Professor professor : professores) {
-                                if (professor.idProf == idProfessor) {
+                                if (professor.getIdProf() == idProfessor) {
                                     // Adiciona o curso à lista de cursos
                                     cursos.add(new Curso(id, nome, cargaHoraria, professor)); 
                                     System.out.println("\nCurso cadastrado com sucesso.");
@@ -131,7 +131,7 @@ public class CursosMain {
 
                             // Busca o curso pelo ID
                             for (Curso curso : cursos) {
-                                if (curso.idCurso == idCurso) {
+                                if (curso.getIdCurso() == idCurso) {
                                     // Adiciona o aluno à lista de alunos
                                     alunos.add(new Aluno(id, nome, dataNascimento, cpf, curso)); 
                                     System.out.println("\nAluno cadastrado com sucesso.");
@@ -153,43 +153,66 @@ public class CursosMain {
                 
                 // Listar Professores
                 case 4:
-                    // Verifica se há professores cadastrados
-                    if (professores.isEmpty()) {
-                        System.out.println("\nNenhum professor cadastrado.");
-                    } else {
-                        // Exibe os professores e seus cursos e a quantidade de alunos em cada curso
-                        for (Professor professor : professores) {
-                            System.out.print("\nNome do professor: " + professor.nomeProf + " | Departamento: " + professor.departamento + " | Cursos Associados: ");
-                            for (Curso curso : professor.cursos) {
-                                System.out.print(curso.nomeCurso + " ");
+                    try{
+                        // Verifica se há professores cadastrados
+                        if (professores.isEmpty()) {
+                            System.out.println("\nNenhum professor cadastrado.");
+                        } else {
+                            // Exibe os professores e seus cursos e a quantidade de alunos em cada curso
+                            for (Professor professor : professores) {
+                                System.out.print(professor);
+
+                                boolean professorEncontrado = false;
+
+                                // Busca o curso associado pelo ID do professor
+                                for (Curso curso : professor.getCursos()) {
+                                    if (curso.getProfessor().getIdProf() == professor.getIdProf()) {
+                                        System.out.print(curso.getNome() + " | Alunos no Curso: " + curso.getAlunos().size() + "\n");
+                                        professorEncontrado = true;
+                                    }
+                                }
+
+                                // Caso o professor não tenha curso associado
+                                if (!professorEncontrado) {
+                                    System.out.println("Nenhum curso associado.");
+                                }                       
                             }
-                            System.out.println("| Alunos por Curso: " + Curso.alunos.size());
                         }
+                    } catch (Exception e) {
+                        System.out.println("\nErro ao listar os professores: " + e.getMessage());
                     }
                     break;
 
                 // Listar Cursos
                 case 5:
-                    // Verifica se há cursos cadastrados
-                    if (cursos.isEmpty()) { 
-                        System.out.println("\nNenhum curso cadastrado.");
-                    } else {
-                        for (Curso curso : cursos) {
-                            System.out.println(curso);
+                    try {
+                        // Verifica se há cursos cadastrados
+                        if (cursos.isEmpty()) { 
+                            System.out.println("\nNenhum curso cadastrado.");
+                        } else {
+                            for (Curso curso : cursos) {
+                                System.out.println(curso);
+                            }
                         }
+                    } catch (Exception e) {
+                        System.out.println("\nErro ao listar os cursos: " + e.getMessage());
                     }
                     break;
 
                 // Listar Alunos
                 case 6:
-                    // Verifica se há alunos cadastrados
-                    if (alunos.isEmpty()) { 
-                        System.out.println("\nNenhum aluno cadastrado.");
-                    } else {
-                        // Exibe os alunos e seus cursos
-                        for (Aluno aluno : alunos) {
-                            System.out.println("Nome do aluno: " + aluno.nomeAluno + " | Data de nascimento: " + aluno.dataNascimento + " | CPF do aluno: " + aluno.cpf + " | Curso: " + aluno.curso.nomeCurso);
+                    try {
+                        // Verifica se há alunos cadastrados
+                        if (alunos.isEmpty()) { 
+                            System.out.println("\nNenhum aluno cadastrado.");
+                        } else {
+                            // Exibe os alunos e seus cursos
+                            for (Aluno aluno : alunos) {
+                                System.out.println(aluno);
+                            }
                         }
+                    } catch (Exception e) {
+                        System.out.println("\nErro ao listar os alunos: " + e.getMessage());
                     }
                     break;
                 

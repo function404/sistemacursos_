@@ -2,7 +2,7 @@
 
 ## 📢 Informações
 
-- Versão: 1.0.6
+- Versão: 1.2.0
 
 - Última atualização: 08 Out. 2024
 
