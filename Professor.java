@@ -6,7 +6,7 @@ public class Professor extends InfoGeral {
     private String departamento;
 
     // Lista de cursos pelo professor
-    static ArrayList<Curso> cursos = new ArrayList<>(); 
+    ArrayList<Curso> cursos = new ArrayList<>(); 
 
     // Construtor da classe Professor. Recebe o ID, nome e departamento do professor
     public Professor(int idProf, String nomeProf, String departamento) {
@@ -31,10 +31,10 @@ public class Professor extends InfoGeral {
 
     @Override
     public String toString() {
-        return "Nome do Professor: " 
+        return "\nNome do Professor: " 
             + this.getNome()
             + " | Departamento: "
             + this.getDepartamento()
-            + " | Cursos Associados: ";
+            + "\n";
     }
 }

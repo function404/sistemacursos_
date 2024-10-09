@@ -167,14 +167,14 @@ public class Menu {
                                 // Busca o curso associado pelo ID do professor
                                 for (Curso curso : professor.getCursos()) {
                                     if (curso.getProfessor().getIdProf() == professor.getIdProf()) {
-                                        System.out.print(curso.getNome() + " | Alunos no Curso: " + curso.getAlunos().size() + "\n");
+                                        System.out.print("Cursos Associados: " + curso.getNome()  + " | Alunos no Curso: " + curso.getAlunos().size() + '\n');
                                         professorEncontrado = true;
                                     }
                                 }
 
                                 // Caso o professor não tenha curso associado
                                 if (!professorEncontrado) {
-                                    System.out.println("Nenhum curso associado.");
+                                    System.out.println("Cursos Associados: Nenhum curso associado.");
                                 }                       
                             }
                         }

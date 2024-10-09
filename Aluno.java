@@ -41,7 +41,7 @@ public class Aluno extends InfoGeral {
 
     @Override
     public String toString() {
-        return "Aluno: " 
+        return "\nAluno: " 
             + this.getNomeAluno() 
             + " | Data de Nascimento: " 
             + this.getDataNascimento() 

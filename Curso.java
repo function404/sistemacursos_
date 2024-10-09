@@ -7,7 +7,7 @@ public class Curso extends InfoGeral {
     private Professor professor;
 
     // Lista de alunos pelo curso
-    static ArrayList<Aluno> alunos = new ArrayList<>();
+    ArrayList<Aluno> alunos = new ArrayList<>();
 
     // Construtor da classe Curso. Recebe o ID, nome, carga horária e professor do curso
     public Curso(int idCurso, String nomeCurso, int cargaHoraria, Professor professor) { 
@@ -39,7 +39,8 @@ public class Curso extends InfoGeral {
 
     @Override
     public String toString() {
-        return "Curso: " + this.getNome() 
+        return "\nCurso: " 
+            + this.getNome() 
             + " | Carga Horária: " 
             + this.cargaHoraria 
             + " horas"
