@@ -19,11 +19,20 @@ public class Curso {
         this.professor = professor;
 
         // Relaciona o curso ao professor
-        professor.adicionarCurso(this); 
+        professor.getCursos().add(this); 
     }
 
-    public void adicionarAluno(Aluno aluno) {
-        // Adiciona um aluno à lista de alunos do curso
-        alunos.add(aluno); 
+    public ArrayList<Aluno> getAlunos() {
+        return alunos;
+    }
+
+    @Override
+    public String toString() {
+        return "Curso: " + this.nomeCurso 
+            + " | Carga Horária: " 
+            + this.cargaHoraria 
+            + " horas"
+            + " | Professor: " 
+            + this.professor.nomeProf;
     }
 }

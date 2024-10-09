@@ -17,8 +17,7 @@ public class Professor {
         this.departamento = departamento;
     }
 
-    public void adicionarCurso(Curso curso) {
-        // Adiciona um curso à lista de cursos do professor
-        cursos.add(curso);
+    public ArrayList<Curso> getCursos() {
+        return cursos;
     }
 }

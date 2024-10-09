@@ -76,6 +76,7 @@ public class CursosMain {
                             int idProfessor = scanner.nextInt();
                             scanner.nextLine(); 
 
+
                             boolean professorEncontrado = false;
 
                             // Busca o professor pelo ID
@@ -112,7 +113,7 @@ public class CursosMain {
                             System.out.print("\nDigite o ID do aluno: ");
                             int id = scanner.nextInt();
                             scanner.nextLine();
-
+                            
                             System.out.print("\nDigite o nome do aluno: ");
                             String nome = scanner.nextLine();
 
@@ -174,7 +175,7 @@ public class CursosMain {
                         System.out.println("\nNenhum curso cadastrado.");
                     } else {
                         for (Curso curso : cursos) {
-                            System.out.println("\nNome do Curso: " + curso.nomeCurso + " | Carga Horária: " + curso.cargaHoraria + " | Professor: " + curso.professor.nomeProf);
+                            System.out.println(curso);
                         }
                     }
                     break;

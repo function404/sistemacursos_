@@ -16,11 +16,6 @@ public class Aluno {
         this.curso = curso;
 
         // Relaciona o aluno ao curso
-        curso.adicionarAluno(this);
-        
-        // verifica se o CPF tem 11 dígitos
-        if (cpf.length() != 11) {
-            System.out.println("Erro: O CPF deve conter 11 dígitos.");
-        }
+        curso.getAlunos().add(this);
     }
 }
