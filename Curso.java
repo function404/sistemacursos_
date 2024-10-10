@@ -21,30 +21,35 @@ public class Curso extends InfoGeral {
         professor.getCursos().add(this);
     }
 
+    // Métodos getters
+    // Método para retornar a lista de alunos do curso
     public ArrayList<Aluno> getAlunos() {
         return alunos;
     }
 
+    // Método para retornar o ID do curso
     public int getIdCurso() {
         return this.idCurso;
     }
 
+    // Método para retornar a carga horária do curso
     public int getCargaHoraria() {
         return this.cargaHoraria;
     }
 
+    // Método para retornar o professor do curso
     public Professor getProfessor() {
         return this.professor;
     }
 
     @Override
     public String toString() {
-        return "\nCurso: " 
+        return "\nNome do Curso: " 
             + this.getNome() 
             + " | Carga Horária: " 
-            + this.cargaHoraria 
+            + this.getCargaHoraria() 
             + " horas"
-            + " | Professor: " 
+            + " | Nome do Professor: " 
             + this.professor.getNome();
     }
 }

@@ -17,16 +17,28 @@ public class Professor extends InfoGeral {
     }
 
     // Métodos getters
+    // Método para retornar o ID do professor
     public int getIdProf() {
         return this.idProf;
     }
 
+    // Método para retornar o departamento do professor
     public String getDepartamento() {
         return this.departamento;
     }
 
+    // Método para adicionar um curso ao professor
     public ArrayList<Curso> getCursos() {
         return cursos;
+    }
+
+    // Método para calcular a carga horária total dos cursos do professor
+    public int calcularCargaHorariaTotal() {
+        int cargaHorariaTotal = 0;
+        for (Curso curso : cursos) {
+            cargaHorariaTotal += curso.getCargaHoraria(); // Soma a carga horária de cada curso
+        }
+        return cargaHorariaTotal;
     }
 
     @Override
@@ -35,6 +47,8 @@ public class Professor extends InfoGeral {
             + this.getNome()
             + " | Departamento: "
             + this.getDepartamento()
-            + "\n";
+            + " | Carga Horária Total: "
+            + this.calcularCargaHorariaTotal()
+            + " horas\n";
     }
 }
