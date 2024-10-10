@@ -19,29 +19,34 @@ public class Aluno extends InfoGeral {
     }
 
     // Métodos getters
+    // Método para retornar o ID do aluno
     public int getIdAluno() {
         return this.idAluno;
     }
 
+    // Método para retornar o nome do aluno
     public String getNomeAluno() {
         return this.getNome();
     }
 
+    // Método para retornar a data de nascimento do aluno
     public String getDataNascimento() {
         return this.dataNascimento;
     }
 
+    // Método para retornar o CPF do aluno 
     public String getCpf() {
         return this.cpf;
     }
 
+    // Método para retornar o curso do aluno
     public Curso getCurso() {
         return this.curso;
     }
 
     @Override
     public String toString() {
-        return "\nAluno: " 
+        return "\nNome do Aluno: " 
             + this.getNomeAluno() 
             + " | Data de Nascimento: " 
             + this.getDataNascimento() 

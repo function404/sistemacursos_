@@ -120,8 +120,19 @@ public class Menu {
                             System.out.print("\nDigite a data de nascimento (dd/MM/yyyy): ");
                             String dataNascimento = scanner.nextLine();
 
+                            if (!validarDataNascimento(dataNascimento)) {
+                                System.out.println("\nErro: A data de nascimento deve estar no formato dd/MM/yyyy. Cadastro não realizado.");
+                                break;
+                            }
+
                             System.out.print("\nDigite o CPF do aluno: ");
                             String cpf = scanner.nextLine();
+
+                            // Verificação de CPF
+                            if (!validarCPF(cpf)) {
+                                System.out.println("\nErro: CPF inválido. Deve conter 11 dígitos e estar no formato XXX.XXX.XXX-XX. Cadastro não realizado.");
+                                break;
+                            }
 
                             System.out.print("\nDigite o ID do curso: ");
                             int idCurso = scanner.nextInt();
@@ -229,5 +240,13 @@ public class Menu {
 
         // Fecha o scanner
         scanner.close();
+    }
+
+    public static boolean validarCPF(String cpf) {
+        return cpf != null && cpf.matches("\\d{3}.\\d{3}.\\d{3}-\\d{2}");
+    }
+
+    public static boolean validarDataNascimento(String dataNascimento) {
+        return dataNascimento != null && dataNascimento.matches("\\d{2}/\\d{2}/\\d{4}");
     }
 }
